@@ -1,11 +1,12 @@
-# Manual do Jogo Uno Programação
+# Manual do Jogo: DEV!
 
 ## Objetivo do Jogo
 O objetivo do jogo é se livrar de todas as suas cartas antes dos outros jogadores. Utilize as funções de diferentes linguagens de programação para atrapalhar seus oponentes ou facilitar o seu caminho para a vitória!
 
 ## Componentes do Jogo
 - Cartas divididas em três linguagens: *SQL*, *Python* e *JavaScript*.
-- Cartas de troca de linguagem: *Index*.
+- Cartas de troca de linguagem: *Index Laranja*.
+- Cartas de virada de direção: *Index Rosa*.
 
 ## Preparação
 1. Cada jogador recebe 7 cartas.
@@ -15,7 +16,7 @@ O objetivo do jogo é se livrar de todas as suas cartas antes dos outros jogador
 ## Como Jogar
 - O jogo segue no sentido horário.
 - Em cada turno, um jogador deve:
-  1. Jogar uma carta da mesma linguagem ou mudar a linguagem com a carta *Index*.
+  1. Jogar uma carta da mesma linguagem ou mudar a linguagem com a carta *Index* (SQL pode ser usado a qualquer momento).
   2. Caso não tenha uma carta válida, o jogador deve comprar uma do baralho.
   3. Se ainda assim não puder jogar, passa a vez.
 
@@ -31,6 +32,7 @@ Aqui temos um baralho quase normal. A diferença é que, em vez de naipes, elas 
   - 40 Cartas Amarelas - 0 a 9
   - 8 Cartas Amarelas - Funcionais
   - 16 Cartas Verdes - Funcionais
+
 
 ### Cartas SQL
 1. *INSERT INTO cartas VALUES (X)* - (𝟚)

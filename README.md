@@ -54,7 +54,7 @@ Aqui temos um baralho quase normal. A diferença é que, em vez de naipes, elas 
    - *Descrição:* Troque todas as suas cartas com o jogador que você escolher.
 
 5. *DROP próximo_jogador* - (𝟙)
-   - *Efeito:* Retire o próximo jogador da rodada.
+   - *Efeito:* Retire o próximo jogador do jogo.
    - *Exemplo:* DROP próximo_jogador;
    - *Descrição:* O jogador à sua esquerda perde a vez.
 

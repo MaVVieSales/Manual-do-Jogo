@@ -63,7 +63,7 @@ Aqui temos um baralho quase normal. A diferença é que, em vez de naipes, elas 
    - *Exemplo:* BACKUP jogador_4;
    - *Descrição:* O jogador X, que estava fora do jogo, volta à partida com as cartas que tinha antes.
 
-7. *VARCHAR(X)*
+7. *VARCHAR(X)* - (𝟜)
    - *Efeito:* O número X tem um valor, e o próximo jogador só pode jogar uma carta dentro desse valor.
    - *Exemplo:* VARCHAR(5);
    - *Descrição:* O próximo jogador só pode jogar uma carta com valor entre o intervalo permitido.

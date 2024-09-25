@@ -6,7 +6,7 @@
 O objetivo do jogo é se livrar de todas as suas cartas antes dos outros jogadores. Utilize as funções de diferentes linguagens de programação para atrapalhar seus oponentes ou facilitar o seu caminho para a vitória!
 
 ## Componentes do Jogo
-- Cartas divididas em três linguagens: *SQL, **Python* e *JavaScript*.
+- Cartas divididas em três linguagens: *SQL*, *Python* e *JavaScript*.
 - Cartas de troca de linguagem: *Index*.
 
 ## Preparação
@@ -25,6 +25,13 @@ O objetivo do jogo é se livrar de todas as suas cartas antes dos outros jogador
 - Quando a carta *Index* for jogada, o jogador deve escolher qual linguagem será a nova ativa, e o jogo continuará com essa linguagem até que outro *Index* seja jogado.
 
 ## Cartas e Funções
+
+### Cartas numeradas
+Aqui temos um baralho quase normal. A diferença é que, em vez de naipes, elas são divididas em cores dessa maneira:
+  - 19 Cartas Azuis - 0 a 9
+  - 19 Cartas Verdes - 0 a 9
+  - 19 Cartas Vermelhas - 0 a 9
+  - 19 Cartas Amarelas - 0 a 9
 
 ### Cartas SQL
 1. *INSERT INTO cartas VALUES (X)*
@@ -68,9 +75,8 @@ O objetivo do jogo é se livrar de todas as suas cartas antes dos outros jogador
    - *Exemplo:* num = 7
    - *Descrição:* Jogue uma carta com o número 7.
 
-2. *def next_turn():*
+2. *#Você foi comentado.*
    - *Efeito:* Pula a vez de um jogador.
-   - *Exemplo:* def next_turn(): pass
    - *Descrição:* O próximo jogador perde a vez.
 
 ### Cartas JavaScript
@@ -79,10 +85,15 @@ O objetivo do jogo é se livrar de todas as suas cartas antes dos outros jogador
    - *Exemplo:* let num = 3;
    - *Descrição:* Jogue uma carta com o número 3.
 
-2. *console.log(next_player_cards);*
+2. *console.log(jogador_x);*
    - *Efeito:* Revele as cartas do próximo jogador.
-   - *Exemplo:* console.log(next_player_cards);
-   - *Descrição:* Veja todas as cartas do jogador à sua esquerda.
+   - *Exemplo:* console.log(jogador_x);
+   - *Descrição:* Veja todas as cartas do jogador de sua escolha.
+     
+3. *//Você foi comentado.*
+   - *Efeito:* Pula a vez de um jogador.
+   - *Descrição:* O próximo jogador perde a vez.
+
 
 ### Carta Especial
 1. *Index*

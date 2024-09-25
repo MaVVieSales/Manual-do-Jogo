@@ -95,7 +95,7 @@ Aqui temos um baralho quase normal. A diferença é que, em vez de naipes, elas 
 
 
 ### Carta Especial
-1. *Index* - (𝟙𝟘)
+1. *Index* - (𝟙𝟜)
    - *Efeito:* Troca a linguagem ativa no jogo.
    - *Exemplo:* index(languages);
    - *Descrição:* O jogador escolhe a linguagem (SQL, Python, JavaScript) que todos deverão seguir até que outra carta *Index* seja jogada.

@@ -1,5 +1,3 @@
-# Manual-do-Jogo
-
 # Manual do Jogo Uno Programação
 
 ## Objetivo do Jogo

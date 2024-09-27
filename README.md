@@ -5,8 +5,8 @@ O objetivo do jogo é se livrar de todas as suas cartas antes dos outros jogador
 
 ## Componentes do Jogo
 - Cartas divididas em três linguagens: *SQL*, *Python* e *JavaScript*.
-- Cartas de troca de linguagem: *Index Laranja*.
-- Cartas de virada de direção: *Index Rosa*.
+- Cartas de troca de linguagem: *Replace*.
+- Cartas de virada de direção: *Return*.
 
 ## Preparação
 1. Cada jogador recebe 7 cartas.
@@ -16,22 +16,23 @@ O objetivo do jogo é se livrar de todas as suas cartas antes dos outros jogador
 ## Como Jogar
 - O jogo se inicia no sentido horário.
 - Em cada turno, um jogador deve:
-  1. Jogar uma carta da mesma linguagem, mudar a direção da rodada ou mudar a linguagem com a carta *Index* (OBS: Cartas SQL podem ser usado a qualquer momento).
+  1. Jogar uma carta da mesma linguagem ou numeração, mudar a direção da rodada com a carta *Return* ou mudar a linguagem com a carta *Replace* (OBS: Cartas SQL podem ser usado a qualquer momento).
   2. Caso não tenha uma carta válida, o jogador deve comprar uma do baralho.
   3. Se ainda assim não puder jogar, passa a vez.
 
 ### Troca de Linguagem
-- Quando a carta *Index* for jogada, o jogador deve escolher qual linguagem será a nova ativa, e o jogo continuará com essa linguagem até que outro *Index* seja jogado.
+- Quando a carta *Replace* for jogada, o jogador deve escolher qual linguagem será a nova ativa, e o jogo continuará com essa linguagem até que outro *Replace* seja jogado.
 
 ## Cartas e Funções
 
-### Cartas Numeradas e Funcionais
+### Cartas Numeradas, Funcionais e Especiais
 Aqui temos um baralho quase normal. A diferença é que, em vez de naipes, elas são divididas em cores dessa maneira:
   - 40 Cartas Azuis - 0 a 9
   - 5 Cartas Azuis - Funcionais
   - 40 Cartas Amarelas - 0 a 9
   - 8 Cartas Amarelas - Funcionais
   - 16 Cartas Verdes - Funcionais
+  - 16 Cartas Vermelhas - Especiais
 
 
 ### Cartas SQL
@@ -40,12 +41,12 @@ Aqui temos um baralho quase normal. A diferença é que, em vez de naipes, elas 
    - *Exemplo:* INSERT INTO cartas VALUES (3);
    - *Descrição:* O próximo jogador deve comprar a quantidade de cartas indicada.
 
-2. *DELETE* - (4)
+2. *DELETE* - (𝟜)
    - *Efeito:* Descarte uma carta de sua escolha na jogada.
    - *Exemplo:* DELETE FROM cartas;
    - *Descrição:* Escolha uma carta e descarte na rodada.
 
-3. *SELECT* - (4)
+3. *SELECT* - (𝟜)
    - *Efeito:* Veja todas as cartas SQL(verdes) do próximo jogador.
    - *Exemplo:* SELECT sql FROM próximo_jogador;
    - *Descrição:* Revele todas as cartas SQL(verdes) da mão do jogador escolhido.
@@ -56,7 +57,7 @@ Aqui temos um baralho quase normal. A diferença é que, em vez de naipes, elas 
    - *Descrição:* Troque todas as suas cartas com o jogador que você escolher.
 PS: Caso essa for a sua ultima carta, a pessoa escolhida para trocar de mão ganhará, já que não terá mais nenhuma carta. Já você, continuará jogando com as cartas da pessoa escolhida.
 
-5. *DROP* - (2)
+5. *DROP* - (𝟚)
    - *Efeito:* Retire um jogador do jogo.
    - *Exemplo:* DROP próximo_jogador;
    - *Descrição:* O jogador é excluido.
@@ -77,14 +78,14 @@ PS: Caso essa for a sua ultima carta, a pessoa escolhida para trocar de mão gan
    - *Exemplo:* num = 7
    - *Descrição:* Jogue uma carta com o número 7.
 
-2. *#Você foi comentado.* - (𝟝)
-   - *Efeito:* Pula a vez de um jogador.
-   - *Descrição:* O próximo jogador perde a vez.
-
-2. *print (jogador_x);* - (𝟛)
+2. *print (jogador_x);* - (𝟜)
    - *Efeito:* Revele as cartas Python do jogador de sua escolha.
    - *Exemplo:* print(jogador_x);
-   - *Descrição:* Veja todas as cartas do jogador de sua escolha.
+   - *Descrição:* Veja todas as cartas Python do jogador de sua escolha.
+  
+3. *#Você foi comentado.* - (𝟜)
+   - *Efeito:* Pula a vez de um jogador.
+   - *Descrição:* O próximo jogador perde a vez.
 
 ### Cartas JavaScript
 1. *let num = X;* - (𝟜𝟘)
@@ -92,12 +93,12 @@ PS: Caso essa for a sua ultima carta, a pessoa escolhida para trocar de mão gan
    - *Exemplo:* let num = 3;
    - *Descrição:* Jogue uma carta com o número 3.
 
-2. *console.log(jogador_x);* - (𝟛)
+2. *console.log(jogador_x);* - (𝟜)
    - *Efeito:* Revele as cartas do próximo jogador.
    - *Exemplo:* console.log(jogador_x);
    - *Descrição:* Veja todas as cartas do jogador de sua escolha.
      
-3. *//Você foi comentado.* - (𝟝)
+3. *//Você foi comentado.* - (𝟜)
    - *Efeito:* Pula a vez de um jogador.
    - *Descrição:* O próximo jogador perde a vez.
 

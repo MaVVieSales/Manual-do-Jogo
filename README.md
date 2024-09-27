@@ -33,7 +33,7 @@ Aqui temos um baralho quase normal. A diferença é que, em vez de naipes, elas 
   - 8 Cartas Amarelas - Funcionais
   - 23 Cartas Verdes - Funcionais
   - 16 Cartas Vermelhas - Especiais
-Total: 135 cartas em jogo.
+  - Total: 135 cartas em jogo.
 
 ### Cartas SQL
 1. *INSERT INTO cartas VALUES (X)* - (𝟞)

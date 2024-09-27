@@ -1,5 +1,5 @@
 # Manual do Jogo: DEV!
-
+135
 ## Objetivo do Jogo
 O objetivo do jogo é se livrar de todas as suas cartas antes dos outros jogadores. Utilize as funções de diferentes linguagens de programação para atrapalhar seus oponentes ou facilitar o seu caminho para a vitória!
 
@@ -14,9 +14,9 @@ O objetivo do jogo é se livrar de todas as suas cartas antes dos outros jogador
 3. A primeira carta do topo é virada para iniciar a pilha de descarte.
 
 ## Como Jogar
-- O jogo segue no sentido horário.
+- O jogo se inicia no sentido horário.
 - Em cada turno, um jogador deve:
-  1. Jogar uma carta da mesma linguagem ou mudar a linguagem com a carta *Index* (SQL pode ser usado a qualquer momento).
+  1. Jogar uma carta da mesma linguagem, mudar a direção da rodada ou mudar a linguagem com a carta *Index* (OBS: Cartas SQL podem ser usado a qualquer momento).
   2. Caso não tenha uma carta válida, o jogador deve comprar uma do baralho.
   3. Se ainda assim não puder jogar, passa a vez.
 
@@ -35,32 +35,33 @@ Aqui temos um baralho quase normal. A diferença é que, em vez de naipes, elas 
 
 
 ### Cartas SQL
-1. *INSERT INTO cartas VALUES (X)* - (𝟚)
+1. *INSERT INTO cartas VALUES (X)* - (6)
    - *Efeito:* O próximo jogador compra X cartas.
    - *Exemplo:* INSERT INTO cartas VALUES (3);
-   - *Descrição:* O próximo jogador deve comprar 3 cartas.
+   - *Descrição:* O próximo jogador deve comprar a quantidade de cartas indicada.
 
-2. *DELETE FROM cartas WHERE language = 'X'* - (𝟚)
-   - *Efeito:* Descarte quantas cartas quiser de uma linguagem de sua escolha.
-   - *Exemplo:* DELETE FROM cartas WHERE language = 'python';
-   - *Descrição:* Escolha uma linguagem e descarte quantas cartas dessa linguagem você tiver.
+2. *DELETE* - (4)
+   - *Efeito:* Descarte uma carta de sua escolha na jogada.
+   - *Exemplo:* DELETE FROM cartas;
+   - *Descrição:* Escolha uma carta e descarte na rodada.
 
-3. *SELECT SQL FROM próximo_jogador* - (𝟛)
-   - *Efeito:* Veja todas as cartas do próximo jogador.
-   - *Exemplo:* SELECT * FROM próximo_jogador;
-   - *Descrição:* Revele todas as cartas da mão do jogador à sua esquerda.
+3. *SELECT* - (4)
+   - *Efeito:* Veja todas as cartas SQL(verdes) do próximo jogador.
+   - *Exemplo:* SELECT sql FROM próximo_jogador;
+   - *Descrição:* Revele todas as cartas SQL(verdes) da mão do jogador escolhido.
 
-4. *USE jogador_X* - (𝟚)
+4. *USE* - (𝟚)
    - *Efeito:* Troque de mão com o jogador X.
-   - *Exemplo:* USE jogador_2;
+   - *Exemplo:* USE jogador_X;
    - *Descrição:* Troque todas as suas cartas com o jogador que você escolher.
+PS: Caso essa for a sua ultima carta, a pessoa escolhida para trocar de mão ganhará, já que não terá mais nenhuma carta. Já você, continuará jogando com as cartas da pessoa escolhida.
 
-5. *DROP próximo_jogador* - (𝟙)
-   - *Efeito:* Retire o próximo jogador do jogo.
+5. *DROP* - (2)
+   - *Efeito:* Retire um jogador do jogo.
    - *Exemplo:* DROP próximo_jogador;
-   - *Descrição:* O jogador à sua esquerda perde a vez.
+   - *Descrição:* O jogador é excluido.
 
-6. *BACKUP jogador_X* - (𝟙)
+6. *BACKUP* - (𝟙)
    - *Efeito:* Restaure o jogador X ao jogo.
    - *Exemplo:* BACKUP jogador_4;
    - *Descrição:* O jogador X, que estava fora do jogo, volta à partida com as cartas que tinha antes.
@@ -80,6 +81,11 @@ Aqui temos um baralho quase normal. A diferença é que, em vez de naipes, elas 
    - *Efeito:* Pula a vez de um jogador.
    - *Descrição:* O próximo jogador perde a vez.
 
+2. *print (jogador_x);* - (𝟛)
+   - *Efeito:* Revele as cartas Python do jogador de sua escolha.
+   - *Exemplo:* print(jogador_x);
+   - *Descrição:* Veja todas as cartas do jogador de sua escolha.
+
 ### Cartas JavaScript
 1. *let num = X;* - (𝟜𝟘)
    - *Efeito:* Jogue uma carta com valor X.
@@ -96,11 +102,17 @@ Aqui temos um baralho quase normal. A diferença é que, em vez de naipes, elas 
    - *Descrição:* O próximo jogador perde a vez.
 
 
-### Carta Especial
-1. *Index* - (𝟙𝟜)
+### Cartas Especiais
+1. *Replace* - (𝟠)
    - *Efeito:* Troca a linguagem ativa no jogo.
-   - *Exemplo:* index(languages);
-   - *Descrição:* O jogador escolhe a linguagem (SQL, Python, JavaScript) que todos deverão seguir até que outra carta *Index* seja jogada.
+   - *Exemplo:* Replace(X);
+   - *Descrição:* O jogador escolhe a linguagem (SQL, Python, JavaScript) que todos deverão seguir até que outra carta *Index* seja jogada ou haja a mesma numeração da atual em outra linguagem.
+
+  1. *Return* - (𝟠)
+   - *Efeito:* Altera a direção ativa no jogo.
+   - *Exemplo:* Return jogo_inverso;
+   - *Descrição:* O jogador escolhe a linguagem (SQL, Python, JavaScript) que todos deverão seguir até que outra carta *Index* seja jogada ou haja a mesma numeração da atual em outra linguagem.
+
 
 ## Vencendo o Jogo
 - O jogador que descartar todas as suas cartas primeiro, vence.

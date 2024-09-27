@@ -1,5 +1,5 @@
 # Manual do Jogo: DEV!
-135
+
 ## Objetivo do Jogo
 O objetivo do jogo é se livrar de todas as suas cartas antes dos outros jogadores. Utilize as funções de diferentes linguagens de programação para atrapalhar seus oponentes ou facilitar o seu caminho para a vitória!
 
@@ -28,15 +28,15 @@ O objetivo do jogo é se livrar de todas as suas cartas antes dos outros jogador
 ### Cartas Numeradas, Funcionais e Especiais
 Aqui temos um baralho quase normal. A diferença é que, em vez de naipes, elas são divididas em cores dessa maneira:
   - 40 Cartas Azuis - 0 a 9
-  - 5 Cartas Azuis - Funcionais
+  - 8 Cartas Azuis - Funcionais
   - 40 Cartas Amarelas - 0 a 9
   - 8 Cartas Amarelas - Funcionais
-  - 16 Cartas Verdes - Funcionais
+  - 23 Cartas Verdes - Funcionais
   - 16 Cartas Vermelhas - Especiais
-
+Total: 135 cartas em jogo.
 
 ### Cartas SQL
-1. *INSERT INTO cartas VALUES (X)* - (6)
+1. *INSERT INTO cartas VALUES (X)* - (𝟞)
    - *Efeito:* O próximo jogador compra X cartas.
    - *Exemplo:* INSERT INTO cartas VALUES (3);
    - *Descrição:* O próximo jogador deve comprar a quantidade de cartas indicada.
@@ -48,14 +48,14 @@ Aqui temos um baralho quase normal. A diferença é que, em vez de naipes, elas 
 
 3. *SELECT* - (𝟜)
    - *Efeito:* Veja todas as cartas SQL(verdes) do próximo jogador.
-   - *Exemplo:* SELECT sql FROM próximo_jogador;
+   - *Exemplo:* SELECT sql FROM jogador_X;
    - *Descrição:* Revele todas as cartas SQL(verdes) da mão do jogador escolhido.
 
 4. *USE* - (𝟚)
    - *Efeito:* Troque de mão com o jogador X.
    - *Exemplo:* USE jogador_X;
    - *Descrição:* Troque todas as suas cartas com o jogador que você escolher.
-PS: Caso essa for a sua ultima carta, a pessoa escolhida para trocar de mão ganhará, já que não terá mais nenhuma carta. Já você, continuará jogando com as cartas da pessoa escolhida.
+PS: Caso essa for a sua última carta, a pessoa escolhida para trocar de mão ganhará, já que não terá mais nenhuma carta. Já você, continuará jogando com as cartas da pessoa escolhida.
 
 5. *DROP* - (𝟚)
    - *Efeito:* Retire um jogador do jogo.
@@ -64,8 +64,8 @@ PS: Caso essa for a sua ultima carta, a pessoa escolhida para trocar de mão gan
 
 6. *BACKUP* - (𝟙)
    - *Efeito:* Restaure o jogador X ao jogo.
-   - *Exemplo:* BACKUP jogador_4;
-   - *Descrição:* O jogador X, que estava fora do jogo, volta à partida com as cartas que tinha antes.
+   - *Exemplo:* BACKUP jogador_X;
+   - *Descrição:* O jogador escolhido anteriormente, que estava fora do jogo, volta à partida com as cartas que tinha antes.
 
 7. *VARCHAR(X)* - (𝟜)
    - *Efeito:* O número X tem um valor, e o próximo jogador só pode jogar uma carta dentro desse valor.
@@ -107,14 +107,15 @@ PS: Caso essa for a sua ultima carta, a pessoa escolhida para trocar de mão gan
 1. *Replace* - (𝟠)
    - *Efeito:* Troca a linguagem ativa no jogo.
    - *Exemplo:* Replace(X);
-   - *Descrição:* O jogador escolhe a linguagem (SQL, Python, JavaScript) que todos deverão seguir até que outra carta *Index* seja jogada ou haja a mesma numeração da atual em outra linguagem.
+   - *Descrição:* O jogador escolhe a linguagem (SQL, Python, JavaScript) que todos deverão seguir até que outra carta *Replace* seja jogada ou haja a mesma numeração da carta anterior em outra linguagem.
 
   1. *Return* - (𝟠)
-   - *Efeito:* Altera a direção ativa no jogo.
+   - *Efeito:* Altera o sentido ativo no jogo.
    - *Exemplo:* Return jogo_inverso;
-   - *Descrição:* O jogador escolhe a linguagem (SQL, Python, JavaScript) que todos deverão seguir até que outra carta *Index* seja jogada ou haja a mesma numeração da atual em outra linguagem.
+   - *Descrição:* Se o jogo estava em sentido horário, muda para o sentido anti-horário e vice-versa.
 
 
 ## Vencendo o Jogo
+- Antes de jogar a penúltima carta, o jogador precisa falar DEV. Caso o jogador não fale e alguém o denuncie antes da sua próxima jogada, o jogador compra 5 cartas.
 - O jogador que descartar todas as suas cartas primeiro, vence.
 - Se as cartas do baralho acabarem, embaralhe a pilha de descarte para continuar o jogo.
